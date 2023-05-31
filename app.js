@@ -13,7 +13,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-const host_ip = "localhost:3000";
+const host_ip = "ctceth.com";
 
 // test
 // app.get("/", (req, res) => {
