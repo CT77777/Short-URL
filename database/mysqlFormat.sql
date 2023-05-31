@@ -1,0 +1,10 @@
+CREATE DATABASE shorturl;
+
+use shorturl;
+
+CREATE TABLE shorturl (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    final_key VARCHAR(50) UNIQUE NOT NULL,
+    original_url VARCHAR(255) NOT NULL,
+    created_time TIMESTAMP NOT NULL DEFAULT NOW()
+);
