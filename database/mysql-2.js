@@ -4,12 +4,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // create pool connecting to DB
-export const pool = mysql
+export const pool2 = mysql
   .createPool({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
+    host: process.env.RDS_MYSQL_HOST2,
+    user: process.env.RDS_MYSQL_USER,
+    password: process.env.RDS_MYSQL_PASSWORD,
+    database: process.env.RDS_MYSQL_DATABASE,
     waitForConnections: true,
     connectionLimit: 10,
   })
@@ -18,8 +18,8 @@ export const pool = mysql
 // store short URL and original URL to DB
 
 // get original URL from short URL
-export async function getOriginalURL(finalKey) {
-  const response = await pool.query(
+export async function getOriginalURL2(finalKey) {
+  const response = await pool2.query(
     `
         SELECT original_url FROM shorturl
         WHERE final_key = ?
